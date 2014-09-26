@@ -25,6 +25,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/libsec_ecryptfs.so:recovery/root/sbin/libsec_ecryptfs.so \
     $(LOCAL_PATH)/recovery/libsec_km.so:recovery/root/sbin/libsec_km.so \
 	$(LOCAL_PATH)/selinux/file_contexts:recovery/root/prebuilt_file_contexts \
+	 $(LOCAL_PATH)/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
 	$(LOCAL_PATH)/runatboot.sh:recovery/root/sbin/runatboot.sh
 
 $(call inherit-product, build/target/product/full.mk)

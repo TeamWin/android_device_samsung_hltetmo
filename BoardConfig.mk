@@ -27,7 +27,6 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 BOARD_KERNEL_CMDLINE :=  console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F enforcing=0
 BOARD_KERNEL_BASE :=  0x00000000
-#BOARD_FORCE_RAMDISK_ADDRESS := 0x02000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hltetmo/dtb --tags_offset 0x01e00000
 
@@ -38,12 +37,18 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/samsung/hltetmo/kernAl
+# Kernel Configs
+#TARGET_KERNEL_SOURCE := kernel/samsung/hlte
+#TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
+#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_eur_defconfig
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 #BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/hltetmo/custombootimg.mk
 
 #TWRP specific build flags
@@ -75,3 +80,4 @@ TW_CRYPTO_KEY_LOC := "footer"
 TW_NO_EXFAT_FUSE := true
 TW_NO_EXFAT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_MTP_DEVICE := "/dev/usb_mtp_gadget"
