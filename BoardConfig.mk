@@ -63,6 +63,7 @@ endif
 ifeq ($(BOOTLOADER), 4.4)
 	TW_BRIGHTNESS_PATH := "/sys/devices/mdp.0/qcom\x2cmdss_fb_primary.173/leds/lcd-backlight/brightness"
 endif
+#ANDROID_RB_RESTART := true
 TW_MAX_BRIGHTNESS := 255
 TW_INTERNAL_STORAGE_PATH := "/data/media/0"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
@@ -81,3 +82,4 @@ TW_NO_EXFAT_FUSE := true
 TW_NO_EXFAT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_MTP_DEVICE := "/dev/usb_mtp_gadget"
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
